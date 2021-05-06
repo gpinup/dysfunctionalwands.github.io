@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <title>Dysfunctional_wands</title>
     <meta name="description" content="Dysfunctional_wands" />
+    <link rel="manifest" href="./manifest.json">
 
     <script src="/assets/libs/aframe/aframe.min.js"></script>
     <script src="/assets/libs/aframe/aframe-animation-component.min.js"></script>
@@ -11,6 +12,7 @@
     <script src="/assets/libs/aframe/aframe-layout-component.min.js"></script>
     <script src="/assets/libs/aframe/aframe-template-component.min.js"></script>
 
+    <script src="/assets/js/set-main-links.js"></script>
     <script src="/assets/js/set-image.js"></script>
   </head>
   <body>
@@ -18,71 +20,13 @@
       <a-assets>
         <!-- Main room background -->
         <img id="main-room-image" crossorigin="anonymous" src="/assets/img/main-room.jpg" />
-
-        <!-- Top Artists photos -->
-        <img id="artist1-thumb" crossorigin="anonymous" src="/assets/img/artists-thumbs/Anna-Tappari.jpg" />
-        <img id="artist2-thumb" crossorigin="anonymous" src="/assets/img/artists-thumbs/Beatrice-Matassi.jpg" />
-        <img id="artist3-thumb" crossorigin="anonymous" src="/assets/img/artists-thumbs/Chiara-Innocenti-Sedili.jpg" />
-        <img id="artist4-thumb" crossorigin="anonymous" src="/assets/img/artists-thumbs/Elisa-Cocchi.jpg" />
-
-        <img id="artist5-thumb" crossorigin="anonymous" src="/assets/img/artists-thumbs/Federica-Amadii-Barbagli.jpg" />
-        <img id="artist6-thumb" crossorigin="anonymous" src="/assets/img/artists-thumbs/Giorgia-Polverini.jpg" />
-        <img id="artist7-thumb" crossorigin="anonymous" src="/assets/img/artists-thumbs/Giorgia-Toselli.jpg" />
-        <img id="artist8-thumb" crossorigin="anonymous" src="/assets/img/artists-thumbs/Maria-Krimskaya.jpg" />
-
-        <img id="artist9-thumb" crossorigin="anonymous" src="/assets/img/artists-thumbs/Martina-Paganelli.jpg" />
-        <img id="artist10-thumb" crossorigin="anonymous" src="/assets/img/artists-thumbs/Melissa-Ferretti.jpg" />
-        <img id="artist11-thumb" crossorigin="anonymous" src="/assets/img/artists-thumbs/Michela-Albano.jpg" />
-        <img id="artist12-thumb" crossorigin="anonymous" src="/assets/img/artists-thumbs/Sara-Magni.jpg" />
-
-        <img id="artist13-thumb" crossorigin="anonymous" src="/assets/img/artists-thumbs/Sofia-Merlin.jpg" />
-        <img id="artist14-thumb" crossorigin="anonymous" src="/assets/img/artists-thumbs/Valeria-Monti.jpg" />
-        <img id="artist15-thumb" crossorigin="anonymous" src="/assets/img/artists-thumbs/Valeria-Scardino.jpg" />
-        <img id="artist16-thumb" crossorigin="anonymous" src="/assets/img/artists-thumbs/Ylenia-Joiner.jpg" />
-        <img id="artist17-thumb" crossorigin="anonymous" src="/assets/img/artists-thumbs/Zaira-Fiallo.jpg" />
-
-        <!-- Each Artist Block settings -->
-        <script id="link" type="text/html">
-          <a-entity
-            class="link"
-            geometry="primitive: circle; radius: 0.6"
-            material="shader: flat; src: ${thumb}"
-            event-set__1="_event: mousedown; scale: 1 1 1"
-            event-set__2="_event: mouseup; scale: 1.2 1.2 1.2"
-            event-set__3="_event: mouseenter; scale: 1.2 1.2 1.2"
-            event-set__4="_event: mouseleave; scale: 1 1 1"
-            set-image="on: click; url: ${url}"
-          >
-          </a-entity>
-        </script>
       </a-assets>
 
       <!-- Background block -->
       <a-sky id="main-room-container" radius="10" src="#main-room-image"></a-sky>
 
       <!-- Artists block -->
-      <a-entity id="links0" layout="type: circle; plane: xz; radius: 5;" position="0 0 0" rotation="0 16 0">
-        <a-entity template="src: #link" data-url="/rooms/Anna-Tappari.html" data-thumb="#artist1-thumb" rotation="0 -90 0"></a-entity>
-        <a-entity template="src: #link" data-url="/rooms/Beatrice-Matassi.html" data-thumb="#artist2-thumb" rotation="0 -111.17 0"></a-entity>
-        <a-entity template="src: #link" data-url="/rooms/Chiara-Innocenti-Sedili.html" data-thumb="#artist3-thumb" rotation="0 -132.34 0"></a-entity>
-        <a-entity template="src: #link" data-url="/rooms/Elisa-Cocchi.html" data-thumb="#artist4-thumb" rotation="0 -153.51 0"></a-entity>
-
-        <a-entity template="src: #link" data-url="/rooms/Federica-Amadii-Barbagli.html" data-thumb="#artist5-thumb" rotation="0 -174.68 0"></a-entity>
-        <a-entity template="src: #link" data-url="/rooms/Giorgia-Polverini.html" data-thumb="#artist6-thumb" rotation="0 -195.85 0"></a-entity>
-        <a-entity template="src: #link" data-url="/rooms/Giorgia-Toselli.html" data-thumb="#artist7-thumb" rotation="0 -217.02 0"></a-entity>
-        <a-entity template="src: #link" data-url="/rooms/Maria-Krimskaya.html" data-thumb="#artist8-thumb" rotation="0 -238.19 0"></a-entity>
-
-        <a-entity template="src: #link" data-url="/rooms/Martina-Paganelli.html" data-thumb="#artist9-thumb" rotation="0 -259.36 0"></a-entity>
-        <a-entity template="src: #link" data-url="/rooms/Melissa-Ferretti.html" data-thumb="#artist10-thumb" rotation="0 -280.53 0"></a-entity>
-        <a-entity template="src: #link" data-url="/rooms/Michela-Albano.html" data-thumb="#artist11-thumb" rotation="0 -301.7 0"></a-entity>
-        <a-entity template="src: #link" data-url="/rooms/Sara-Magni.html" data-thumb="#artist12-thumb" rotation="0 -322.87 0"></a-entity>
-
-        <a-entity template="src: #link" data-url="/rooms/Sofia-Merlin.html" data-thumb="#artist13-thumb" rotation="0 -344.04 0"></a-entity>
-        <a-entity template="src: #link" data-url="/rooms/Valeria-Monti.html" data-thumb="#artist14-thumb" rotation="0 -365.21 0"></a-entity>
-        <a-entity template="src: #link" data-url="/rooms/Valeria-Scardino.html" data-thumb="#artist15-thumb" rotation="0 -386.38 0"></a-entity>
-        <a-entity template="src: #link" data-url="/rooms/Ylenia-Joiner-Santuio.html" data-thumb="#artist16-thumb" rotation="0 -407.55 0"></a-entity>
-        <a-entity template="src: #link" data-url="/rooms/Zaira-Fiallo.html" data-thumb="#artist17-thumb" rotation="0 -428.72 0"></a-entity>
-      </a-entity>
+      <a-entity link-list></a-entity>
 
       <!-- Camera settings -->
       <a-entity camera look-controls>

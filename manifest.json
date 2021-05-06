@@ -1,0 +1,9 @@
+{
+  "name": "Dysfunctional_wands",
+  "short_name": "Dysfunctional_wands",
+  "theme_color": "transparent",
+  "background_color": "transparent",
+  "display": "standalone",
+  "orientation": "portrait",
+  "start_url": "."
+}

@@ -6,13 +6,12 @@ AFRAME.registerComponent('set-image', {
     dur: { type: 'number', default: 300 },
   },
 
-  init: function () {
+  init() {
     const data = this.data;
     const el = this.el;
 
-    el.addEventListener(data.on, function () {
-      console.log(data.url);
-      setTimeout(function () {
+    el.addEventListener(data.on, () => {
+      setTimeout(() => {
         if (!data.url) {
           history.back();
         } else {

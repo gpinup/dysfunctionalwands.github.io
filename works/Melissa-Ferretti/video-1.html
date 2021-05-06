@@ -12,43 +12,24 @@
     <script src="/assets/libs/aframe/aframe-template-component.min.js"></script>
 
     <script src="/assets/js/set-image.js"></script>
+    <script src="/assets/js/play-video.js"></script>
+    <script src="/assets/js/go-back.js"></script>
   </head>
   <body>
     <a-scene>
       <a-assets>
-        <!-- Main room background -->
-        <img id="main-room-image" crossorigin="anonymous" src="/assets/img/main-room.jpg" />
-
         <!-- Top Artists works -->
-        <img id="exit-thumb" crossorigin="anonymous" src="/assets/img/artist-room.jpg" />
-
-        <!-- Each Artist Block settings -->
-        <script id="link" type="text/html">
-          <a-entity
-            class="link"
-            geometry="primitive: circle; radius: 0.6"
-            material="shader: flat; src: ${thumb}"
-            event-set__1="_event: mousedown; scale: 1 1 1"
-            event-set__2="_event: mouseup; scale: 1.2 1.2 1.2"
-            event-set__3="_event: mouseenter; scale: 1.2 1.2 1.2"
-            event-set__4="_event: mouseleave; scale: 1 1 1"
-            set-image="on: click; url: ${url}"
-          >
-          </a-entity>
-        </script>
+        <video id="artist-video" src="/assets/videos/melissa-ferretti1.mp4" webkit-playsinline playsinline controls autoplay loop preload></video>
       </a-assets>
 
       <!-- Background block -->
-      <a-sky id="main-room-container" material="color: #eee"></a-sky>
+      <a-sky artist-background></a-sky>
 
-      <!-- Artists block -->
-      <a-entity id="links0" layout="type: line; margin: 1.5" position="-4 0 -2" rotation="0 45 0">
-        <!-- Exit link -->
-        <a-entity template="src: #link" data-url="" data-thumb="#exit-thumb"></a-entity>
-      </a-entity>
+      <!-- Exit link -->
+      <a-entity data-url="/rooms/Melissa-Ferretti.html" go-back></a-entity>
 
       <!-- The Video of the Artist -->
-      <a-video geometry="width: 10; height: 6;" position="0 0 -5" src="/assets/videos/melissa-ferretti1.mp4"></a-video>
+      <a-video geometry="width: 10; height: 6;" position="0 0 -5" src="#artist-video" video-player></a-video>
 
       <!-- Camera settings -->
       <a-entity camera look-controls>

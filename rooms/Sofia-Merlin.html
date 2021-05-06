@@ -11,46 +11,30 @@
     <script src="/assets/libs/aframe/aframe-layout-component.min.js"></script>
     <script src="/assets/libs/aframe/aframe-template-component.min.js"></script>
 
+    <script src="/assets/js/set-room-links.js"></script>
     <script src="/assets/js/set-image.js"></script>
   </head>
   <body>
     <a-scene>
       <a-assets>
-        <!-- Room background -->
-        <img id="room-image" crossorigin="anonymous" src="/assets/img/artist-room.jpg" />
-
         <!-- Top Artists works -->
-        <img id="exit-thumb" crossorigin="anonymous" src="/assets/img/exit-thumbnail.jpg" />
-        <img id="project1-thumb" crossorigin="anonymous" src="/assets/img/artists-thumbs/Sofia-Merlin.jpg" />
-        <img id="project2-thumb" crossorigin="anonymous" src="/assets/img/artists-thumbs/Sofia-Merlin.jpg" />
-
-        <!-- Each Artist Block settings -->
-        <script id="link" type="text/html">
-          <a-entity
-            class="link"
-            geometry="primitive: circle; radius: 0.8"
-            material="shader: flat; src: ${thumb}"
-            event-set__1="_event: mousedown; scale: 1 1 1"
-            event-set__2="_event: mouseup; scale: 1.2 1.2 1.2"
-            event-set__3="_event: mouseenter; scale: 1.2 1.2 1.2"
-            event-set__4="_event: mouseleave; scale: 1 1 1"
-            set-image="on: click; url: ${url}"
-          >
-          </a-entity>
-        </script>
+        <img id="project1-thumb" crossorigin="anonymous" src="/assets/img/artists-work-thumbs/sofia-merlin-1.jpg" />
+        <img id="project2-thumb" crossorigin="anonymous" src="/assets/img/artists-work-thumbs/sofia-merlin-1.jpg" />
       </a-assets>
 
       <!-- Background block -->
-      <a-sky id="room-container" radius="10" src="#room-image"></a-sky>
+      <a-sky artist-background></a-sky>
 
       <!-- Artists block -->
-      <a-entity id="links0" layout="type: line; margin: 2" position="-3 0 -4">
+      <a-entity artist-link-list>
         <!-- Exit link -->
-        <a-entity template="src: #link" data-url="" data-thumb="#exit-thumb"></a-entity>
+        <a-entity></a-entity>
         <!-- The First project link -->
-        <a-entity template="src: #link" data-url="/works/Sofia-Merlin/photo.html" data-thumb="#project1-thumb"></a-entity>
+        <a-entity data-url="/works/Sofia-Merlin/photo.html" data-text="Hello World!"></a-entity>
         <!-- The Second project link -->
-        <a-entity template="src: #link" data-url="/works/Sofia-Merlin/photo-360.html" data-thumb="#project2-thumb"></a-entity>
+        <a-entity data-url="/works/Sofia-Merlin/photo-360.html" data-text="Hello World!"></a-entity>
+        <!-- Concept -->
+        <a-entity></a-entity>
       </a-entity>
 
       <!-- Camera settings -->
