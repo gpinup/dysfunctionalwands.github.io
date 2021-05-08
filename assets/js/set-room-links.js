@@ -3,21 +3,27 @@ const BACKGROUND_COLOR = '#fcebcd';
 const MAX_CIRCLE_DEG = 360;
 const DEFAULT_ROTATION = 90;
 
-const artistDataList = [{
+const getData = (length) => {
+  const firstBtn = {
     text: '<<',
     url: '/',
     img: '/assets/img/exit-thumbnail.jpg',
     radius: 0.5,
-  },
-  { img: '#project1-thumb', radius: 0.8 },
-  { img: '#project2-thumb', radius: 0.8 },
-  {
+  };
+  const lastBtn = {
     text: 'Concept',
     url: '/crytic-room.html',
     img: '/assets/img/crytic-room.jpg',
     radius: 0.5,
-  },
-];
+  };
+
+  const projectBtns = Array(length - 2).fill(0).map((_, i) => ({
+    img: `#project${i + 1}-thumb`,
+    radius: 0.8,
+  }));
+
+  return [firstBtn, ...projectBtns, lastBtn];
+};
 
 const setEvents = (element, url) => {
   const eventList = [
@@ -63,11 +69,14 @@ const createTextEl = (text) => {
 AFRAME.registerComponent('artist-link-list', {
   init() {
     const el = this.el;
+    const childList = Array.from(el.children);
 
     el.object3D.position.set(-4.5, 0, -4);
     el.setAttribute('layout', 'type: line; margin: 3');
 
-    Array.from(el.children).forEach((childNode, i) => {
+    const artistDataList = getData(childList.length);
+
+    childList.forEach((childNode, i) => {
       const currentData = artistDataList[i];
       const text = currentData.text || childNode.dataset.text;
       const url = currentData.url || childNode.dataset.url;
