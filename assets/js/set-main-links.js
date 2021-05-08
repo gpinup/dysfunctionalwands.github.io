@@ -83,9 +83,9 @@ const artistList = [
     photo: '/assets/img/artists-thumbs/Valeria-Scardino.jpg',
   },
   {
-    name: 'Ylenia Joiner Santuio',
-    url: '/rooms/Ylenia-Joiner-Santuio.html',
-    photo: '/assets/img/artists-thumbs/Ylenia-Joiner-Santuio.jpg',
+    name: 'Ylenia Joiner Santurio',
+    url: '/rooms/Ylenia-Joiner-Santurio.html',
+    photo: '/assets/img/artists-thumbs/Ylenia-Joiner-Santurio.jpg',
   },
   {
     name: 'Zaira Fiallo',

@@ -2,8 +2,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Ylenia Joiner Santuio</title>
-    <meta name="description" content="Ylenia Joiner Santuio" />
+    <title>Ylenia Joiner Santurio</title>
+    <meta name="description" content="Ylenia Joiner Santurio" />
 
     <link rel="manifest" href="/manifest.json">
     <link rel="shortcut icon" type="image/jpg" href="/assets/img/favicon.ico"/>
@@ -14,25 +14,31 @@
     <script src="/assets/libs/aframe/aframe-layout-component.min.js"></script>
     <script src="/assets/libs/aframe/aframe-template-component.min.js"></script>
 
+    <script src="/assets/js/set-room-links.js"></script>
     <script src="/assets/js/set-image.js"></script>
-    <script src="/assets/js/go-back.js"></script>
   </head>
   <body>
     <a-scene>
+      <a-assets>
+        <!-- Top Artists works -->
+        <img id="project1-thumb" crossorigin="anonymous" src="/assets/img/artists-work-thumbs/ylenia-joiner-thumbnail.jpg" />
+        <img id="project2-thumb" crossorigin="anonymous" src="/assets/img/artists-work-thumbs/ylenia-joiner-thumbnail1.jpg" />
+      </a-assets>
+
       <!-- Background block -->
       <a-sky artist-background></a-sky>
 
-      <!-- Exit link -->
-      <a-entity data-url="/rooms/Ylenia-Joiner-Santuio.html" go-back></a-entity>
-
-      <!-- The 1st Photo of the Artist -->
-      <a-image geometry="width: 6; height: 8;" position="0 0 -5" src="/assets/img/artists-works/ylenia-joiner-photo-1.jpg"></a-image>
-
-      <!-- The 2d Photo of the Artist -->
-      <a-image geometry="width: 6; height: 8;" position="5 0 0" rotation="0 -90 0" src="/assets/img/artists-works/ylenia-joiner-photo-2.jpg"></a-image>
-
-      <!-- The 3d Photo of the Artist -->
-      <a-image geometry="width: 6; height: 8;" position="0 0 5" rotation="0 -180 0" src="/assets/img/artists-works/ylenia-joiner-photo-3.jpg"></a-image>
+      <!-- Artists block -->
+      <a-entity artist-link-list>
+        <!-- Exit link -->
+        <a-entity></a-entity>
+        <!-- The First project link -->
+        <a-entity data-url="/works/Ylenia-Joiner-Santurio/photo.html" data-text="Niente di meno"></a-entity>
+        <!-- The Second project link -->
+        <a-entity data-url="/works/Ylenia-Joiner-Santurio/video.html" data-text="Decay"></a-entity>
+        <!-- Concept -->
+        <a-entity data-url="/works/Ylenia-Joiner-Santurio/crytic-room.html"></a-entity>
+      </a-entity>
 
       <!-- Camera settings -->
       <a-entity camera look-controls>
