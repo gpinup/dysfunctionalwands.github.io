@@ -1,4 +1,4 @@
-AFRAME.registerComponent('set-link', {
+AFRAME.registerComponent('set-text', {
   schema: {
     on: { type: 'string' },
     target: { type: 'selector' },
