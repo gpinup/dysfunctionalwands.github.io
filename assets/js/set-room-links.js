@@ -59,6 +59,8 @@ const createTextEl = (text) => {
 
   textEl.setAttribute('align', 'center');
   textEl.setAttribute('width', 5);
+  textEl.setAttribute('negate', false);
+  textEl.setAttribute('font', '/assets/fonts/custom-msdf.json');
   textEl.setAttribute('color', '#222');
   textEl.setAttribute('value', text);
 
