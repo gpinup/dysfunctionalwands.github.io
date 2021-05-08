@@ -18,6 +18,7 @@
 
     <script src="/assets/js/set-main-links.js"></script>
     <script src="/assets/js/set-image.js"></script>
+    <script src="/assets/js/set-link.js"></script>
   </head>
   <body>
     <a-scene>
@@ -28,6 +29,9 @@
 
       <!-- Background block -->
       <a-sky id="main-room-container" radius="10" src="#main-room-image"></a-sky>
+
+      <!-- Instagram link -->
+      <a-entity data-url="https://www.instagram.com/dysfunctional_wands/" data-src="/assets/img/instagram.png" set-link></a-entity>
 
       <!-- Artists block -->
       <a-entity link-list></a-entity>
