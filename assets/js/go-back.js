@@ -16,30 +16,19 @@ const setEvents = (element, url) => {
   element.setAttribute('set-image', `on: click; url: ${url}`);
 };
 
-const createImageEl = (url) => {
-  const imageEl = document.createElement('a-entity');
-
-  imageEl.classList.add('link');
-
-  imageEl.setAttribute('geometry', 'primitive: sphere; radius: 0.6');
-  imageEl.setAttribute('material', `shader: flat; src: ${DEFAULT_IMG}`);
-
-  setEvents(imageEl, url);
-
-  return imageEl;
-};
-
 AFRAME.registerComponent('go-back', {
   init() {
     const el = this.el;
 
-    el.object3D.rotation.y = THREE.Math.degToRad(-30);
+    el.object3D.rotation.y = THREE.Math.degToRad(45);
     el.object3D.position.set(-4, 0, -2);
 
-    el.setAttribute('geometry', 'primitive: sphere; radius: 0.6');
-    el.setAttribute('layout', 'type: line;');
-
-    el.appendChild(createImageEl(el.dataset.url));
+    el.classList.add('link');
+  
+    el.setAttribute('geometry', 'primitive: circle; radius: 0.6');
+    el.setAttribute('material', `shader: flat; src: ${el.dataset.src || DEFAULT_IMG}`);
+  
+    setEvents(el, el.dataset.url);
   },
 });
 
