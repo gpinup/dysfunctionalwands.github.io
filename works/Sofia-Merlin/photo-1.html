@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Sofia Merlin</title>
+    <meta name="description" content="Sofia Merlin" />
+
+    <link rel="manifest" href="/manifest.json">
+    <link rel="shortcut icon" type="image/jpg" href="/assets/img/favicon.ico"/>
+
+    <script src="/assets/libs/aframe/aframe.min.js"></script>
+    <script src="/assets/libs/aframe/aframe-animation-component.min.js"></script>
+    <script src="/assets/libs/aframe/aframe-event-set-component.min.js"></script>
+    <script src="/assets/libs/aframe/aframe-layout-component.min.js"></script>
+    <script src="/assets/libs/aframe/aframe-template-component.min.js"></script>
+
+    <script src="/assets/js/set-image.js"></script>
+    <script src="/assets/js/go-back.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <!-- Background block -->
+      <a-sky artist-background></a-sky>
+
+      <!-- Exit link -->
+      <a-entity data-url="/rooms/Sofia-Merlin.html" go-back></a-entity>
+
+      <!-- The Photo of the Artit -->
+      <a-image geometry="width: 8.94; height: 6;" position="0 0 -5" src="/assets/img/artists-works/sofia-merlin-1.jpg"></a-image>
+
+      <!-- Camera settings -->
+      <a-entity camera look-controls>
+        <a-cursor
+          id="cursor"
+          animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
+          animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
+          event-set__1="_event: mouseenter; color: springgreen"
+          event-set__2="_event: mouseleave; color: black"
+          fuse="true"
+          raycaster="objects: .link"
+        ></a-cursor>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
