@@ -85,7 +85,7 @@ const artistList = [
   {
     name: 'Ylenia Joiner Santuio',
     url: '/rooms/Ylenia-Joiner-Santuio.html',
-    photo: '/assets/img/artists-thumbs/Ylenia-Joiner.jpg',
+    photo: '/assets/img/artists-thumbs/Ylenia-Joiner-Santuio.jpg',
   },
   {
     name: 'Zaira Fiallo',
