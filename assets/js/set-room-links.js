@@ -12,7 +12,6 @@ const getData = (length) => {
   };
   const lastBtn = {
     text: 'Concept',
-    url: '/crytic-room.html',
     img: '/assets/img/crytic-room.jpg',
     radius: 0.5,
   };
