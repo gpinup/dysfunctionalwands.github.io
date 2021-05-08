@@ -36,9 +36,8 @@
         <script id="link" type="text/html">
           <a-entity
             class="link"
-            geometry="primitive: sphere; radius: ${radius}"
+            geometry="primitive: circle; radius: ${radius}"
             material="shader: flat; src: ${thumb}"
-            rotation="0 220 0"
             event-set__1="_event: mousedown; scale: 1 1 1"
             event-set__2="_event: mouseup; scale: 1.2 1.2 1.2"
             event-set__3="_event: mouseenter; scale: 1.2 1.2 1.2"
@@ -69,6 +68,8 @@
         width="10"
         position="-4.5 0 -4"
         rotation="0 45 0"
+        negate="false"
+        font="/assets/fonts/custom-msdf.json"
         align="center"
         color="#222"
         value="Hello World Hello World\nHello World Hello World"
@@ -78,6 +79,8 @@
         width="8"
         position="0 0 -4"
         rotation="0 0 0"
+        negate="false"
+        font="/assets/fonts/custom-msdf.json"
         align="center"
         color="#222"
         value="#text"
@@ -88,6 +91,8 @@
         width="8"
         position="4.5 0 0"
         rotation="0 -90 0"
+        negate="false"
+        font="/assets/fonts/custom-msdf.json"
         align="center"
         color="#222"
         value="text
